@@ -1,7 +1,7 @@
 from datetime import datetime
 
 from active_lp.get_historical_prices import get_pricing_data
-from active_lp.utils.subgraph import _convert_date
+from active_lp.utils.subgraph import _convert_date, parse_data
 
 def test_convert_date():
     date_str = '2022-08-05'
@@ -21,4 +21,6 @@ def test_get_historical_price():
     
     assert data
 
+    parsed_data = parse_data(data, 'close', 'poolDayDatas', float)
 
+    assert parsed_data

@@ -3,6 +3,10 @@ from .utils.subgraph import run_query
 
 
 def generate_payload(address: str, timestamps: List[int],  first: bool = False, num_results: int = 100, n_query: Optional[int] = None) -> str:
+    """
+    Build subgraph query payload for querying daily pool data.
+    """
+
 
     if not first:
         payload = f"""
@@ -66,7 +70,6 @@ def get_pricing_data(pool: str, num_results: int = 1000, timestamps: Optional[Li
     """
     Query subgraph data for daily pool data
     """
-
 
     pool = pool.lower()
 
